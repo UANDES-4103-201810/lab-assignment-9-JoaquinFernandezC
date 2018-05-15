@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  duration: 1
+  director: one
+  release_date: 2018-05-15 13:08:14
+  address: one
+
+two:
+  title: MyString
+  description: MyString
+  duration: 1
+  director: two
+  release_date: 2018-05-15 13:08:14
+  address: two
