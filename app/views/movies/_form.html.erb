@@ -1,15 +1,4 @@
-<%= form_with(model: movie, local: true) do |form| %>
-  <% if movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
-      <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @movie do |form| %>
 
   <div class="field">
     <%= form.label :title %>
@@ -27,8 +16,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :director_id %>
-    <%= form.text_field :director_id, id: :movie_director_id %>
+    <%= collection_select(:director_id, 0, Director.all,
+                          :id, :full_name) %>
   </div>
 
   <div class="field">
