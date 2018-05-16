@@ -1,0 +1,32 @@
+<%= form_tag controller: "people", action: "create", method: "post" do %>
+
+  <div class="field">
+    <%= label_tag :first_name, "First name" %>
+    <%= text_field_tag :first_name %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :last_name, "Last name" %>
+    <%= text_field_tag :last_name %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :birth_date, "Birth date" %>
+    <%= date_field_tag :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :description, "Description" %>
+    <%= text_field_tag :description %>
+  </div>
+  <div class="field">
+    <%= radio_button_tag(:person, "director") %>
+    <%= label_tag(:person_director, "This is a director") %>
+    <%= radio_button_tag(:person, "actor") %>
+    <%= label_tag(:person_actor, "This is an actor") %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Create person") %>
+  </div>
+
+<% end %>
