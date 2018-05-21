@@ -1,8 +1,14 @@
 class PeopleController < ApplicationController
   def index
-    puts params[:type]
-    @actors = Actor.all
-    @directors = Director.all
+    if params[:type] == "actor"
+      @people = Actor.all
+      @name = "Actors"
+    elsif params[:type] == "director"
+      @people = Director.all
+      @name = "Directors"
+    else
+       redirect_to people_new_path
+    end
   end
 
   def new
@@ -40,3 +46,4 @@ class PeopleController < ApplicationController
     params.permit(:first_name, :last_name, :birth_date, :description)
   end
 end
+
